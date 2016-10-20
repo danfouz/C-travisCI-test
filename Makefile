@@ -1,10 +1,10 @@
 compilacion:	
-	gcc -o p1 p1.c -lm
+	gcc -o fib_complexN1_6 src/fib_complexN1_6.c -lm
 
-	gcc -o p2 p1-2.c -lm
+	gcc -o fib_complexN src/fib_complexN.c -lm
 
-	gcc -o p3 p1-3.c -lm
+	gcc -o fib_complexNlogN src/fib_complexNlogN.c -lm
 
-	gcc -o test test.c -lm
+	gcc -o test test/test.c -lm
 clean:
-	rm -r p1 p2 p3 test
+	rm -r fib_complexN1_6 fib_complexN fib_complexNlogN test
