@@ -1,2 +1,2 @@
 language: c
-script: gcc src/p1.c -lm
+script: make
