@@ -6,4 +6,4 @@ compilacion:
 	gcc -o fib_complexNlogN src/fib_complexlogN.c -lm
 
 clean:
-	rm -r fib_complexN1_6 fib_complexN fib_complexNlogN
+	rm -r fib_complexN1_6 fib_complexN fib_complexlogN
