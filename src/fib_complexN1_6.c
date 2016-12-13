@@ -28,7 +28,7 @@ double ajustada,sobrestimada,subestimada,t1,t2,ta,tb,tu,t;
   }
   printf("\n");
 
-  for (n=2;n<=32;n*=2){
+  for (n=2;n<=64;n*=2){
     flag=' ';
     t1=microsegundos();
     fib1(n);
