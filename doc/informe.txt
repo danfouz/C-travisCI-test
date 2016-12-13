@@ -1,0 +1,91 @@
+Caracteristicas de la Maquina:
+    CPU: Intel(R) Core(TM) i7-2630QM CPU @ 2.00GHz   
+    Memoria: 8GB
+    SO: Ubuntu 14.04lts
+
+Unidades:
+    us: microsegundos
+
+INTRODUCCION:
+  Este informe muestra la eficiencia de tres algoritmos diferentes que calculan la sucesion de fibonacci.
+  El primer Algoritmo esta basado en la definicion inductiva.(fib1)
+  El segundo Algoritmo esta basado en la version iterativa.(fib2)
+  El tercer Algoritmo esta basado en la version "divide y venceras".(fib3)
+
+  A la hora de seleccionar cada caso, hemos escogido el óptimo partiendo de 3 ejecuciones.
+
+NOTA: Hemos seleccionado las siguientes tablas ya que otras ejecuciones ofrecían mediciones anómalas, probablemente por la asignación inesperada de recursos por parte del sistema operativo.
+
+TABLAS DE TIEMPOS
+
+Estudio 1: Estudio de la complejidad del algoritmo fib1
+
+    n           t(n)    Subestimada     Ajustada   Sobrestimada
+                         t(n)/1,1^n   t(n)/1,6^n     t(n)/2^n
+----------------------------------------------------------------------
+    2        0.0080  *     0.006612     0.003056     0.002000
+    4        0.0330  *     0.022539     0.004815     0.002063
+    8        0.2200  *     0.102632     0.004683     0.000859
+   16        9.6750  *     2.105562     0.004384     0.000148
+   32    22326.0000     1057.413852     0.004584     0.000005
+
+					C = 0.0044
+
+* Promedio de tiempo de 1000 ejecuciones del algoritmo
+
+Confirmamos que:
+-> t(n)/1,1^n tiende a infinito. Es cota subestimada
+-> t(n)/1,6^n tiende a un valor constante C = 0.0044. Es cota ajustada
+-> t(n)/2^n tiende a 0. Es cota sobrestimada
+
+Estudio 2: Estudio de la complejidad del algoritmo fib2
+
+         n           t(n)    Subestimada     Ajustada  Sobrestimada
+                              t(n)/n^0.8       t(n)/n  t(n)/n*log(n)
+----------------------------------------------------------------------
+      1000        5.2100  *     0.020741     0.005210     0.035989
+     10000       53.9340  *     0.034030     0.005393     0.049675
+    100000      539.0000        0.053900     0.005390     0.062055
+   1000000     5237.0000        0.083001     0.005237     0.072352
+  10000000    53717.0000        0.134931     0.005372     0.086582
+
+                                            C=0.005372
+
+* Promedio de tiempo de 1000 ejecuciones del algoritmo
+
+Confirmamos que:
+-> t(n)/n^0.8 tiende a infinito. Es cota subestimada
+-> t(n)/n tiende a un valor constante C = 0.005372. Es cota ajustada
+-> t(n)/n*log(n) tiende a 0. Es cota sobrestimada
+
+
+Estudio 3: Estudio de la complejidad del algoritmo fib3
+
+         n           t(n)    Subestimada     Ajustada  Sobrestimada
+                         t(n)/sqrt(log(n))  t(n)/log n   t(n)/n^0.5
+----------------------------------------------------------------------
+      1000        0.0740  *     0.028156     0.010713     0.002340
+     10000        0.1030  *     0.033939     0.011183     0.001030
+    100000        0.1200  *     0.035366     0.010423     0.000379
+   1000000        0.1400  *     0.037666     0.010134     0.000140
+  10000000        0.1850  *     0.046080     0.011478     0.000059
+
+                                            C=0.010713
+
+* Promedio de tiempo de 1000 ejecuciones del algoritmo
+
+
+Confirmamos que:
+-> t(n)/sqrt(log(n)) tiende a infinito. Es cota subestimada
+-> t(n)/log n tiende a un valor constante C = 0.005372. Es cota ajustada
+-> t(n)/n^0.5 tiende a 0. Es cota sobrestimada
+
+CONCLUSIONES:
+  -La primera tabla muestra los tiempos de la resolucion de la sucesion mediante su forma "inductiva",donde apreciamos que el algoritmo no pasa del tiempo umbral de 500 microsegundos al ser unos valores de n bajos,pero si vemos que crece de forma muy rapida. Eso es debido a que el algoritmo a pesar de ser muy sencillo tiene que hacer muchas sumas para poder devolver el valor a medida que n aumenta,en concreto tiene que hacer aproximadamente 1.6^n.
+
+  -La segunda tabla muestra los tiempos para la resolucion de forma "iterativa",esto es suponiendo un par de numeros consecutivos de la sucesion (i,j),en nuestro caso (0,1), sabemos que el siguiente termino sera de la forma (i+j,j-i) de esta manera solo necesitamos conocer 2 terminos de la sucesion y en cada iteracion del bucle conocemos el siguiente termino,con lo cual solo necesitamos hacer n sumas y asi se aprecia en la medicion de tiempos.
+
+  -La tercera tabla muestra los tiempos para la resolucion de la forma "divide y venceras",utilizando matrices y leyes de exponentes podemos calcular el sistema de 2 ecuaciones con 2 incognitas. Este sistema reduce enormemente la cantidad de operaciones que tenemos que calcular para obtener la sucesion de numeros grandes y asi lo vemos en las tablas donde todos los tiempos no llegan a superar el tiempo umbral y ademas estan muy proximos entre si.
+
+
+  --Comparando estas 3 formas de resolver la sucesion desde el punto de vista de la complejidad computacional vemos que la mejor es usando la forma "divide y venceras",ya que,por ejemplo, la cantidad de operaciones que tenemos que hacer para calcular fib(100) son 9 multiplicaciones de matrices y con el algoritmo 2 serian 100 sumas y con el algoritmo 1 serian 2.58^20 sumas aproximadamente (con calculadora de 10 digitos arrastramos un error muy grande)

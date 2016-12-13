@@ -1,0 +1,42 @@
+Código:
+-> PR-UN-001
+
+Unidad: fib_complexN1_6	
+
+Función/método: fib1(int n)
+
+Motivación: Validacion de que el algoritmo funciona, resolviendo la sucesion de fibonacci para 10 iteraciones.
+
+Entradas: n=10;
+
+Salidas esperadas: n(10) = 34
+
+Código:
+-> PR-UN-002
+
+Unidad: fib_complexN	
+
+Función/método: fib2(int n)
+
+Motivación: Validacion de que el algoritmo funciona, resolviendo la sucesion de fibonacci para 10 iteraciones.
+
+Entradas: n=10;
+
+Salidas esperadas: n(10) = 34
+
+
+Código:
+-> PR-UN-003
+
+Unidad: fib_complexlogN	
+
+Función/método: fib3(int n)
+
+Motivación: Validacion de que el algoritmo funciona, resolviendo la sucesion de fibonacci para 10 iteraciones.
+
+Entradas: n=10;
+
+Salidas esperadas: n(10) = 34
+
+
+
