@@ -58,5 +58,7 @@ double ajustada,sobrestimada,subestimada,t1,t2,ta,tb,tu,t;
     printf("%5d%14.4f%3c%13.6f%13.6f%13.6f\n",n,t,flag,subestimada,ajustada,sobrestimada );
   }
 }
-
+int main(){
+	test1();
+}
 
