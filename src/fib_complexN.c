@@ -9,6 +9,7 @@ double microsegundos() {
   return(t.tv_usec + t.tv_sec *1000000.0);
 }
 
+
 int fib2(int n){
   int i,j,k;
   i=1;
@@ -60,8 +61,5 @@ double ajustada,sobrestimada,subestimada,t1,t2,ta,tb,tu,t;
 }
 
 
-int main(){
-	test2();
 
-}
 

@@ -10,6 +10,8 @@ double microsegundos() {
 }
 
 
+
+
 //Algoritmos implementados
 int fib1(int n){
   if (n<2)
@@ -55,9 +57,6 @@ double ajustada,sobrestimada,subestimada,t1,t2,ta,tb,tu,t;
     subestimada=t/pow(1.1,n);
     printf("%5d%14.4f%3c%13.6f%13.6f%13.6f\n",n,t,flag,subestimada,ajustada,sobrestimada );
   }
-}
-int main(){
-	test1();
 }
 
 

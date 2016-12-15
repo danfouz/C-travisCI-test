@@ -2,12 +2,15 @@
 #include <sys/time.h>
 #include <math.h>
 
+
 double microsegundos() {
   struct timeval t;
   if (gettimeofday(&t, NULL) < 0)
     return 0.0;
   return(t.tv_usec + t.tv_sec *1000000.0);
 }
+
+
 
 int fib3(int n){
 int i,j,k,h,t;
@@ -64,8 +67,5 @@ double ajustada,sobrestimada,subestimada,t1,t2,ta,tb,tu,t;
     printf("%10d%14.4f%3c%13.6f%13.6f%13.6f\n",n,t,flag,subestimada,ajustada,sobrestimada );
 	} 
 }
-int main(){
-test3();
 
-}
 
