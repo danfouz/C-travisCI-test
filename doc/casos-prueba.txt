@@ -85,7 +85,7 @@ Unidad: fib_complexN1_6
 
 Función/método: fib1(int n)
 
-Motivación: Validación del no funcionamiento del algoritmo cuando se le introduce un 0
+Motivación: Validación del funcionamiento del algoritmo cuando se le introduce un 0
 
 Entradas: n = 0
 
@@ -97,7 +97,7 @@ Unidad: fib_complexN
 
 Función/método: fib2(int n)
 
-Motivación: Validación del no funcionamiento del algoritmo cuando se le introduce un 0
+Motivación: Validación del funcionamiento del algoritmo cuando se le introduce un 0
 
 Entradas: n = 0
 
@@ -111,7 +111,7 @@ Unidad: fib_complexlogN
 
 Función/método: fib3(int n)
 
-Motivación: Validación del no funcionamiento del algoritmo cuando se le introduce un 0
+Motivación: Validación del  funcionamiento del algoritmo cuando se le introduce un 0
 
 Entradas: n = 0
 
@@ -124,7 +124,7 @@ Unidad: fib_complexN1_6
 
 Función/método: fib1(int n)
 
-Motivación: Validación del no funcionamiento del algoritmo cuando se le introduce un 1
+Motivación: Validación del funcionamiento del algoritmo cuando se le introduce un 1
 
 Entradas: n = 1
 
@@ -137,7 +137,7 @@ Unidad: fib_complexN
 
 Función/método: fib2(int n)
 
-Motivación: Validación del no funcionamiento del algoritmo cuando se le introduce un 1
+Motivación: Validación del funcionamiento del algoritmo cuando se le introduce un 1
 
 Entradas: n = 1
 
@@ -151,7 +151,7 @@ Unidad: fib_complexlogN
 
 Función/método: fib3(int n)
 
-Motivación: Validación del no funcionamiento del algoritmo cuando se le introduce un 1
+Motivación: Validación del funcionamiento del algoritmo cuando se le introduce un 1
 
 Entradas: n = 1
 
