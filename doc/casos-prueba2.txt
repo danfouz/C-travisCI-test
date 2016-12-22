@@ -1,0 +1,172 @@
+
+-> PR-UN-015
+
+Unidad: fib_complexN1_6	
+
+Función/método: fib1(int n)
+
+Motivación: Cuantificar cuanto tarda con un n= 40
+
+Entradas: n=40;
+
+
+----------------------------------------------------------------
+fib1(40)
+tiempo que tarda 
+gcc fib_complexN1_6.c -o fib
+real	0m0.646s
+user	0m0.646s
+sys	0m0.000s
+   text	   data	    bss	    dec	    hex	filename
+   1219	    552	      8	   1779	    6f3	fib
+
+
+gcc fib_complexN1_6.c -o fib -O1
+
+real	0m0.450s
+user	0m0.450s
+sys	0m0.000s
+   text	   data	    bss	    dec	    hex	filename
+   1203	    552	      8	   1763	    6e3	fib
+
+gcc fib_complexN1_6.c -o fib -O2
+
+real	0m0.358s
+user	0m0.359s
+sys	0m0.000s
+   text	   data	    bss	    dec	    hex	filename
+   1227	    552	      8	   1787	    6fb	fib
+
+gcc fib_complexN1_6.c -o fib -O3
+
+real	0m0.486s
+user	0m0.487s
+sys	0m0.000s
+   text	   data	    bss	    dec	    hex	filename
+   2251	    552	      8	   2811	    afb	fib
+
+
+fib2(100000000)
+
+gcc fib_complexN.c -o fib
+real	0m0.441s
+user	0m0.441s
+sys	0m0.000s
+
+
+   text	   data	    bss	    dec	    hex	filename
+   1219	    552	      8	   1779	    6f3	fib
+
+
+
+gcc fib_complexN.c -o fib -O1
+real	0m0.001s
+user	0m0.000s
+sys	0m0.001s
+
+   text	   data	    bss	    dec	    hex	filename
+   1171	    552	      8	   1731	    6c3	fib
+
+
+gcc fib_complexN.c -o fib -O2
+real	0m0.001s
+user	0m0.000s
+sys	0m0.001s
+
+   text	   data	    bss	    dec	    hex	filename
+   1171	    552	      8	   1731	    6c3	fib
+
+gcc fib_complexN.c -o fib -O3
+real	0m0.001s
+user	0m0.000s
+sys	0m0.001s
+
+   text	   data	    bss	    dec	    hex	filename
+   1171	    552	      8	   1731	    6c3	fib
+
+
+
+
+int main()
+{
+	fib3(1000000000);
+
+
+gcc fib_complexlogN.c -o fib
+real	0m0.001s
+user	0m0.000s
+sys	0m0.001s
+  text	   data	    bss	    dec	    hex	filename
+   1331	    552	      8	   1891	    763	fib
+
+
+gcc fib_complexlogN.c -o fib -O1
+real	0m0.001s
+user	0m0.000s
+sys	0m0.001s
+   text	   data	    bss	    dec	    hex	filename
+   1235	    552	      8	   1795	    703	fib
+
+gcc fib_complexlogN.c -o fib -O2
+real	0m0.001s
+user	0m0.001s
+sys	0m0.000s
+   text	   data	    bss	    dec	    hex	filename
+   1235	    552	      8	   1795	    703	fib
+
+
+gcc fib_complexlogN.c -o fib -O3
+
+real	0m0.001s
+user	0m0.000s
+sys	0m0.001s
+
+   text	   data	    bss	    dec	    hex	filename
+   1251	    552	      8	   1811	    713	fib
+
+
+
+
+
+cppcheck --enable=all fib_complexN.c fib_complexN1_6.c fib_complexlogN.c 2>err.txt
+
+Checking fib_complexN.c...
+1/3 files checked 28% done
+Checking fib_complexN1_6.c...
+2/3 files checked 58% done
+Checking fib_complexlogN.c...
+3/3 files checked 100% done
+Checking usage of global functions..
+
+Resultado de err.txt
+[fib_complexN.c:13]: (style) The function 'fib2' is never used.
+[fib_complexlogN.c:15]: (style) The function 'fib3' is never used.
+[fib_complexN.c:5]: (style) The function 'microsegundos' is never used.
+(information) Cppcheck cannot find all the include files (use --check-config for details)
+
+
+MILU
+segmentation fault
+
+
+GCC ESTRESS
+lapa src # gcc fib_complexN.c -o fib -O1
+fib_complexN.c: In function ‘main’:
+fib_complexN.c:26:2: warning: overflow in implicit constant conversion [-Woverflow]
+  fib2(100000000000);
+
+/home/simkovi/Documents/16-17/VVS/practicaslaura/Milu/bin/milu -f func.txt fib_complexN.c 
+
+
+DECIR QUE MILU NOS DA SEGMENTACION FAULT 
+EXPLICAR RESULTADOS DEL ESTRESS CON GCC
+
+
+
+PARA HACER COBERTURA
+
+gcc -fprofile-arcs -ftest-coverage src/fib_complexN.c
+./a.out
+lcov --directory /home/simkovi/Documents/16-17/VVS/practicaslaura/VVS/ -c -o application.info
+genhtml application.info
+

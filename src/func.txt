@@ -1,0 +1,3 @@
+int fib2(int n)
+int fib3(int n)
+int fib1(int n)
